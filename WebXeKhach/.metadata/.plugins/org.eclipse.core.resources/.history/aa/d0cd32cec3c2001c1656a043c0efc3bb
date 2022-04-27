@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method = "post">
+		<h3>
+			Mã nhân viên : ${nv.maNV }
+		</h3>
+		<h3>Họ nhân viên: <input name = "honv" value = "${nv.hoNV }"/></h3>
+		<h3>Tên nhân viên: <input name = "tennv" value = "${nv.tenNV }"/></h3>
+		<h3>Phái:
+				<input path = "phai" value = "${nv.phai }">
+
+		</h3>
+		<h3>Ngày Sinh: 
+			<form:input path = "ngaySinh" value = "${date }"/>
+		</h3>
+		<h3>cccd: <form:input path = "cccd" value = "${nv.cccd }"/></h3>
+		<h3>email: <form:input path = "email" value = "${nv.email }"/></h3>
+		<h3>sdt: <form:input path = "sdt" value = "${nv.sdt }"/></h3>
+		<button name = "update">Update</button>
+	</form>
+</body>
+</html>
