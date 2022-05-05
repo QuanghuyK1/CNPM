@@ -1,0 +1,40 @@
+package ptit.controller;
+import ptit.entity.*;
+
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Login {
+	@Autowired
+	SessionFactory factory;
+	
+	
+	@RequestMapping("welcome")
+	public String sa() {
+		return "user/login";
+	}
+	@RequestMapping("dologin")
+	public String dologin(HttpServletRequest request) {
+		String tk = request.getParameter("us");
+		String mk = request.getParameter("ps");
+		Session session = factory.openSession();
+		TaiKhoan acc = (TaiKhoan) session.load(TaiKhoan.class, tk);
+		if(acc.getUserName().equals(null) || acc.getTrangThai() == 0 || (acc.getUserName().equals(tk)==true && acc.getMatKhau().equals(mk)==false)) {
+			request.setAttribute("messenger", "sai tai khoan hoac mat khau");
+			return "user/login";
+		}else if(acc.getChucVu().getMaCV().equals("AD")) {
+			return "user/FormAdmin";
+		}else if(acc.getChucVu().getMaCV().equals("NV")) {
+			return "user/FormNV";
+		}
+		return "user/FormKH";
+	}
+
+}

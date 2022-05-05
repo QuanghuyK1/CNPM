@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form:form modelAttribute = "newnv">
+		<h3>
+			Mã nhân viên : <input path = "maNV" value = "${nv.maNV }">
+		</h3>
+		<h3>Họ nhân viên: <input path = "hoNV" value = "${nv.hoNV }"></h3>
+		<h3>Tên nhân viên: <input path = "tenNV" value = "${nv.tenNV }"></h3>
+		<h3>Phái:
+				<input path = "phai" value = "${nv.phai }">
+
+		</h3>
+		<h3>Ngày Sinh: 
+			<input type="text" path = "ngaySinh" value = "${date }">
+		</h3>
+		<h3>cccd: <input path = "cccd" value = "${nv.cccd }"></h3>
+		<h3>email: <input path = "email" value = "${nv.email }"></h3>
+		<h3>sdt: <input path = "sdt" value = "${nv.sdt }"></h3>
+		<h3>
+			<a href = "/admin/danhsach.htm"><button>cancel</button></a>
+		</h3>
+	</form:form>
+</body>
+</html>

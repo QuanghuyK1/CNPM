@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method = "post">
+		<label>Mã Loại Xe</label><input type = "text" name = "maLX">
+		<label>Tên Loại Xe</label><input type = "text" name = "tenLX">
+		<form action="add.htm"><button>Thêm</button></form>
+		<form action="back.htm"><button>Hủy</button></form>
+	</form>
+</body>
+</html>

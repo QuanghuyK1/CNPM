@@ -1,0 +1,23 @@
+package ptit.controller;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/admin/")
+public class XeKhachController {
+	@Autowired
+	SessionFactory factory;
+	@Transactional
+	@RequestMapping("xekhach")
+	public String danhsach() {
+		Session session = factory.getCurrentSession();
+		return "xekhach/danhsach";
+	}
+	@RequestMapping("back2")
+	public String back() {
+		return "redirect: /CNPM/admin/xekhach.htm"; 
+	}
+}
