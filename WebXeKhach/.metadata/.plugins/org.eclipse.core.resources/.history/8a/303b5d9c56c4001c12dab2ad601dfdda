@@ -1,0 +1,17 @@
+package ptit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/admin/")
+public class XeKhachController {
+	@RequestMapping("xekhach")
+	public String danhsach() {
+		return "xekhach/danhsach";
+	}
+	@RequestMapping("back2")
+	public String back() {
+		return "redirect: /CNPM/admin/xekhach.htm"; 
+	}
+}
