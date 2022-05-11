@@ -1,0 +1,78 @@
+package ptit.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "XEKHACH")
+public class XeKhach {
+	@Id
+	@Column(name = "Bienxe")
+	private String bienXe;
+	@Column(name = "Loai")
+	private String loai;
+	@Column(name = "Socho")
+	private int soCho;
+	@Column(name = "Trangthai")
+	private int trangThai;
+	@ManyToOne
+	@JoinColumn(name = "MaLX")
+	private LoaiXe loaiXe;
+	@OneToMany(mappedBy = "Bienxe",fetch = FetchType.EAGER)
+	private Collection<ChuyenXe> chuyenXe;
+	public XeKhach() {
+		super();
+	}
+	public XeKhach(String bienXe, String loai, int soCho, int trangThai, LoaiXe loaiXe, Collection<ChuyenXe> chuyenXe) {
+		super();
+		this.bienXe = bienXe;
+		this.loai = loai;
+		this.soCho = soCho;
+		this.trangThai = trangThai;
+		this.loaiXe = loaiXe;
+		this.chuyenXe = chuyenXe;
+	}
+	public String getBienXe() {
+		return bienXe;
+	}
+	public void setBienXe(String bienXe) {
+		this.bienXe = bienXe;
+	}
+	public String getLoai() {
+		return loai;
+	}
+	public void setLoai(String loai) {
+		this.loai = loai;
+	}
+	public int getSoCho() {
+		return soCho;
+	}
+	public void setSoCho(int soCho) {
+		this.soCho = soCho;
+	}
+	public int getTrangThai() {
+		return trangThai;
+	}
+	public void setTrangThai(int trangThai) {
+		this.trangThai = trangThai;
+	}
+	public LoaiXe getLoaiXe() {
+		return loaiXe;
+	}
+	public void setLoaiXe(LoaiXe loaiXe) {
+		this.loaiXe = loaiXe;
+	}
+	public Collection<ChuyenXe> getChuyenXe() {
+		return chuyenXe;
+	}
+	public void setChuyenXe(Collection<ChuyenXe> chuyenXe) {
+		this.chuyenXe = chuyenXe;
+	}
+}

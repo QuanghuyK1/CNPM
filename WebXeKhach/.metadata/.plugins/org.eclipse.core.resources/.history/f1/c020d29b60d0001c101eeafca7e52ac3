@@ -1,0 +1,16 @@
+package ptit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class QuanLyController {
+	@RequestMapping("/QL_TrangChu")
+	public String TrangChu() {
+		return "QuanLy/trangchu";
+	}
+	@RequestMapping("/QL_ChuyenXe")
+	public String ChuyenXe() {
+		return "QuanLy/chuyenxe";
+	}
+}
