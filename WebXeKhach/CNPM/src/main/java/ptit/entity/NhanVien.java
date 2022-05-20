@@ -33,13 +33,13 @@ public class NhanVien {
 	private String sdt;
 	@Column(name = "NgSinh")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "MM/dd/yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date ngaySinh;
 	@Column(name = "Phai")
-	private String phai;
-//	@OneToOne
-//    @JoinColumn(name = "Username", referencedColumnName = "Username")
-//    private TaiKhoan tk;
+	private boolean phai;
+	@OneToOne
+    @JoinColumn(name = "Username", referencedColumnName = "Username")
+    private TaiKhoan tknv;
 	@OneToMany(mappedBy = "nv", fetch = FetchType.EAGER)
 	private Collection<ChuyenXe> xe;
 	@OneToMany(mappedBy = "NV", fetch = FetchType.EAGER)
@@ -80,18 +80,18 @@ public class NhanVien {
 	public void setNgaySinh(Date ngaySinh) {
 		this.ngaySinh = ngaySinh;
 	}
-	public String getPhai() {
+	public boolean getPhai() {
 		return phai;
 	}
-	public void setPhai(String phai) {
+	public void setPhai(boolean phai) {
 		this.phai = phai;
 	}
-//	public TaiKhoan getTk() {
-//		return tk;
-//	}
-//	public void setTk(TaiKhoan tk) {
-//		this.tk = tk;
-//	}
+	public TaiKhoan getTknv() {
+		return tknv;
+	}
+	public void setTknv(TaiKhoan tknv) {
+		this.tknv = tknv;
+	}
 	public Collection<ChuyenXe> getXe() {
 		return xe;
 	}
@@ -104,7 +104,6 @@ public class NhanVien {
 	public void setPhieu(Collection<PhieuDat> phieu) {
 		this.phieu = phieu;
 	}
-	
 	
 	
 }
