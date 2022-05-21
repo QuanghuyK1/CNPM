@@ -1,4 +1,6 @@
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<base href="${pageContext.servletContext.contextPath}/">
 <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -25,7 +27,7 @@
   <link href="<c:url value='/resources/assets/vendor/quill/quill.bubble.css'/>" rel="stylesheet" />
   <link href="<c:url value='/resources/assets/vendor/remixicon/remixicon.css'/>" rel="stylesheet" />
   <link href="<c:url value='/resources/assets/vendor/simple-datatables/style.css'/>" rel="stylesheet" />
-
+	
   <!-- Template Main CSS File -->
   <link href="<c:url value='/resources/assets/css/style.css'/>" rel="stylesheet" type="text/css" />
   <link href="<c:url value='/resources/assets/css/style-v.css'/>" rel="stylesheet" />

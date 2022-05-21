@@ -1,6 +1,9 @@
-INDEX VERSION 1.4+C:\Users\Kiritsugu\Desktop\New folder (2)\CNPM-main\WebXeKhach\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1144369391.index
-1869016302.index
-772109405.index
-1754528851.index
+INDEX VERSION 1.4+C:\WebXeKhach\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3433949796.index
+2756733981.index
+25763184.index
+1302938429.index
+577768268.index
+2159326856.index
+3271193799.index
 2058543799.index

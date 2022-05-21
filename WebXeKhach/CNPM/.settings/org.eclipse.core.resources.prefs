@@ -1,6 +1,3 @@
 eclipse.preferences.version=1
-encoding//src/main/java/ptit/controller/KhachHangController.java=UTF-8
-encoding//src/main/java/ptit/controller/TaiKhoanController.java=UTF-8
-encoding//src/main/webapp/WEB-INF/views/KhachHang/chonchuyen.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/KhachHang/trangchu.jsp=UTF-8
+encoding//src/main/java/ptit/controller/QuanLyController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/QuanLy/slidebar.jsp=UTF-8
