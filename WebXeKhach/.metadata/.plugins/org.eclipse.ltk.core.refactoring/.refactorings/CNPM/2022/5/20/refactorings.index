@@ -1,7 +1,3 @@
 1652178316278	Move 'resources' to 'webapp'
 1652179755906	Move 'head.jsp' to 'QuanLy'
 1652186758421	Rename type 'test'
-1652335033813	Move 'head.jsp' to 'include'
-1652335037370	Move 'slidebar.jsp' to 'include'
-1652339451641	Move 'head.jsp' to 'QuanLy'
-1652339453599	Move 'slidebar.jsp' to 'QuanLy'
