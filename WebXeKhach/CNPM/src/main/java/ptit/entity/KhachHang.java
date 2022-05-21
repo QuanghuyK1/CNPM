@@ -3,6 +3,7 @@ package ptit.entity;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,15 +30,16 @@ public class KhachHang {
 	@Column(name = "TenKH")
 	private String tenKH;
 	@Column(name = "Phai")
-	private String phai;
-//	@ManyToOne
-//	@JoinColumn(name = "Username")
-//	private TaiKhoan tk1;
+	private boolean phai;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "Username")
+	private TaiKhoan tkkh;
 	@OneToMany(mappedBy = "KH",fetch = FetchType.EAGER)
 	private Collection<PhieuDat> phieu;
 	@Column(name = "NgSinh")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "MM/dd/yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date ngSinh;
 	public String getMaKH() {
 		return maKH;
@@ -63,18 +65,18 @@ public class KhachHang {
 	public void setTenKH(String tenKH) {
 		this.tenKH = tenKH;
 	}
-	public String getPhai() {
+	public boolean getPhai() {
 		return phai;
 	}
-	public void setPhai(String phai) {
+	public void setPhai(boolean phai) {
 		this.phai = phai;
 	}
-//	public TaiKhoan getTk1() {
-//		return tk1;
-//	}
-//	public void setTk1(TaiKhoan tk1) {
-//		this.tk1 = tk1;
-//	}
+	public TaiKhoan getTkkh() {
+		return tkkh;
+	}
+	public void setTkkh(TaiKhoan tkkh) {
+		this.tkkh = tkkh;
+	}
 	public Collection<PhieuDat> getPhieu() {
 		return phieu;
 	}
@@ -87,6 +89,6 @@ public class KhachHang {
 	public void setNgSinh(Date ngSinh) {
 		this.ngSinh = ngSinh;
 	}
-	
+
 	
 }

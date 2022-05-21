@@ -45,10 +45,12 @@ public class ChuyenXe {
 	private XeKhach xekhach;
 	@Column(name = "NgayKH")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date ngKH;
 	@Column(name = "Gia")
 	private float gia;
+	@Column(name="SoChoTrong")
+	private int sochotrong;
 	@OneToMany(mappedBy = "chuyen", fetch = FetchType.EAGER)
 	private Collection<PhieuDat> phieu;
 	public String getMaChuyen() {
@@ -104,6 +106,12 @@ public class ChuyenXe {
 	}
 	public void setPhieu(Collection<PhieuDat> phieu) {
 		this.phieu = phieu;
+	}
+	public int getSochotrong() {
+		return sochotrong;
+	}
+	public void setSochotrong(int sochotrong) {
+		this.sochotrong = sochotrong;
 	}
 
 }
