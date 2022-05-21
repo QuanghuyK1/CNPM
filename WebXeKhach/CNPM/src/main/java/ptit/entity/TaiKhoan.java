@@ -1,17 +1,10 @@
 package ptit.entity;
 
-
-import java.util.Collection;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,13 +17,9 @@ public class TaiKhoan {
 	private String matKhau;
 	@Column(name = "Email")
 	private String email;
-//	@OneToOne(mappedBy = "tk",fetch = FetchType.EAGER)
-//	private NhanVien nhanvien;
-//	@OneToOne(mappedBy = "tk1",fetch = FetchType.EAGER)
-//	private KhachHang khachhang;
 	@ManyToOne
 	@JoinColumn(name = "VaiTro")
-	private VaiTro chucVu;
+	private VaiTro vaiTro;
 	@Column(name = "Trangthai")
 	private boolean trangThai;
 	public String getUserName() {
@@ -51,23 +40,11 @@ public class TaiKhoan {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-//	public NhanVien getNhanvien() {
-//		return nhanvien;
-//	}
-//	public void setNhanvien(NhanVien nhanvien) {
-//		this.nhanvien = nhanvien;
-//	}
-//	public KhachHang getKhachhang() {
-//		return khachhang;
-//	}
-//	public void setKhachhang(KhachHang khachhang) {
-//		this.khachhang = khachhang;
-//	}
-	public VaiTro getChucVu() {
-		return chucVu;
+	public VaiTro getVaiTro() {
+		return vaiTro;
 	}
-	public void setChucVu(VaiTro chucVu) {
-		this.chucVu = chucVu;
+	public void setVaiTro(VaiTro vaiTro) {
+		this.vaiTro = vaiTro;
 	}
 	public boolean isTrangThai() {
 		return trangThai;
@@ -76,4 +53,5 @@ public class TaiKhoan {
 		this.trangThai = trangThai;
 	}
 	
+
 }

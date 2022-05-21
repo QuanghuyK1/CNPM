@@ -14,22 +14,22 @@ import javax.persistence.Table;
 public class VaiTro {
 	@Id
 	@Column(name = "MaVT")
-	private String maCV;
+	private String maVT;
 	@Column(name = "TenVT")
-	private String tenCV;
-	@OneToMany(mappedBy = "chucVu", fetch = FetchType.EAGER)
+	private String tenVT;
+	@OneToMany(mappedBy = "vaiTro", fetch = FetchType.EAGER)
 	private Collection<TaiKhoan> taiKhoan;
-	public String getMaCV() {
-		return maCV;
+	public String getMaVT() {
+		return maVT;
 	}
-	public void setMaCV(String maCV) {
-		this.maCV = maCV;
+	public void setMaVT(String maVT) {
+		this.maVT = maVT;
 	}
-	public String getTenCV() {
-		return tenCV;
+	public String getTenVT() {
+		return tenVT;
 	}
-	public void setTenCV(String tenCV) {
-		this.tenCV = tenCV;
+	public void setTenVT(String tenVT) {
+		this.tenVT = tenVT;
 	}
 	public Collection<TaiKhoan> getTaiKhoan() {
 		return taiKhoan;
@@ -37,7 +37,7 @@ public class VaiTro {
 	public void setTaiKhoan(Collection<TaiKhoan> taiKhoan) {
 		this.taiKhoan = taiKhoan;
 	}
-	
+
 	
 	
 }
